@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반응형 웹 페이지</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-200 md:bg-white">
+
+  <!-- 상단 메뉴 -->
+  <nav class="bg-gray-800 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="text-white text-xl font-bold">로고</div>
+      <div class="space-x-6 hidden md:flex">
+        <a href="#" class="text-white">로그인</a>
+        <a href="#" class="text-white">메인</a>
+        <a href="#" class="text-white">상품</a>
+      </div>
+      <!-- 모바일 메뉴 버튼 -->
+      <div class="md:hidden">
+        <button class="text-white" id="menu-toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- 모바일 메뉴 -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-800 p-4">
+      <a href="#" class="block text-white py-2">로그인</a>
+      <a href="#" class="block text-white py-2">메인</a>
+      <a href="#" class="block text-white py-2">상품</a>
+    </div>
+  </nav>
+
+  <!-- 상품 목록 -->
+  <div class="container mx-auto py-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-6">
+    <!-- 상품 카드 -->
+    <div class="bg-white p-4 rounded-lg shadow-lg">
+      <img src="https://via.placeholder.com/150" alt="상품1" class="w-full h-40 object-cover rounded-t-lg">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">상품 1</h3>
+        <p class="text-gray-500">₩30,000</p>
+        <button class="bg-blue-500 text-white w-full py-2 rounded-lg mt-4">장바구니에 담기</button>
+      </div>
+    </div>
+
+    <!-- 나머지 상품들 (2부터 6까지) -->
+    <div class="bg-white p-4 rounded-lg shadow-lg">
+      <img src="https://via.placeholder.com/150" alt="상품2" class="w-full h-40 object-cover rounded-t-lg">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">상품 2</h3>
+        <p class="text-gray-500">₩40,000</p>
+        <button class="bg-blue-500 text-white w-full py-2 rounded-lg mt-4">장바구니에 담기</button>
+      </div>
+    </div>
+
+    <div class="bg-white p-4 rounded-lg shadow-lg">
+      <img src="https://via.placeholder.com/150" alt="상품3" class="w-full h-40 object-cover rounded-t-lg">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">상품 3</h3>
+        <p class="text-gray-500">₩50,000</p>
+        <button class="bg-blue-500 text-white w-full py-2 rounded-lg mt-4">장바구니에 담기</button>
+      </div>
+    </div>
+
+    <div class="bg-white p-4 rounded-lg shadow-lg">
+      <img src="https://via.placeholder.com/150" alt="상품4" class="w-full h-40 object-cover rounded-t-lg">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">상품 4</h3>
+        <p class="text-gray-500">₩60,000</p>
+        <button class="bg-blue-500 text-white w-full py-2 rounded-lg mt-4">장바구니에 담기</button>
+      </div>
+    </div>
+
+    <div class="bg-white p-4 rounded-lg shadow-lg">
+      <img src="https://via.placeholder.com/150" alt="상품5" class="w-full h-40 object-cover rounded-t-lg">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">상품 5</h3>
+        <p class="text-gray-500">₩70,000</p>
+        <button class="bg-blue-500 text-white w-full py-2 rounded-lg mt-4">장바구니에 담기</button>
+      </div>
+    </div>
+
+    <div class="bg-white p-4 rounded-lg shadow-lg">
+      <img src="https://via.placeholder.com/150" alt="상품6" class="w-full h-40 object-cover rounded-t-lg">
+      <div class="p-4">
+        <h3 class="text-xl font-semibold">상품 6</h3>
+        <p class="text-gray-500">₩80,000</p>
+        <button class="bg-blue-500 text-white w-full py-2 rounded-lg mt-4">장바구니에 담기</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 모바일 메뉴 토글
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
