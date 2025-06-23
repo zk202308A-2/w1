@@ -94,11 +94,25 @@
   </div>
 
   <script>
-    // 모바일 메뉴 토글
-    document.getElementById('menu-toggle').addEventListener('click', function() {
-      const mobileMenu = document.getElementById('mobile-menu');
-      mobileMenu.classList.toggle('hidden');
-    });
+
+
+function doA() {
+    console.log("hello")
+}
+
+const a = doA
+
+const b = a
+
+a()
+
+b()
+
+doA()
+
+
+
+
   </script>
 </body>
 </html>

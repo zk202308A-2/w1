@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Display</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        #display {
+            font-size: 5rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="display"></div>
+
+    <div class="button-group">
+        <button id="decrease">-</button>
+        <button id="increase">+</button>
+    </div>
+
+    <script>
+        const target = { num: 10 };
+        const displayObj = document.querySelector("#display");
+        const btnIncrease = document.querySelector("#increase");
+        const btnDecrease = document.querySelector("#decrease");
+
+        function updateDisplay() {
+            displayObj.innerHTML = `NUM ${target.num}`;
+        }
+
+        btnIncrease.addEventListener("click", () => {
+            target.num++;
+            updateDisplay();
+        });
+
+        btnDecrease.addEventListener("click", () => {
+            target.num--;
+            updateDisplay();
+        });
+
+        // 초기 표시
+        updateDisplay();
+    </script>
+</body>
+</html>
