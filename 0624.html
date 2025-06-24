@@ -81,6 +81,7 @@
     ];
 
     const menuList = document.querySelector('.menuList');
+    const cartItemList = document.querySelector('.cartItemList');
 
     const fragment = document.createDocumentFragment();
 
@@ -102,9 +103,17 @@
     function displayCartItems(cartItems){
 
         console.log("=====================" , cartItems)
+        let str = ""
         for(let {mno,name,price,qty} of cartItems){
             console.log(mno,name,price,qty)
+            str += `<li>
+                    <div>
+                        ${mno} -- ${name} - ${price} - ${qty} = ${qty*price}
+                    </div>
+                </li>`
         }//end for
+
+        cartItemList.innerHTML = str
 
     }
 
