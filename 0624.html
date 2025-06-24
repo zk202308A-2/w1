@@ -108,7 +108,13 @@
             console.log(mno,name,price,qty)
             str += `<li>
                     <div>
+                        <div>
                         ${mno} -- ${name} - ${price} - ${qty} = ${qty*price}
+                        </div>
+                        <div>
+                            <button>+</button>
+                            <button>-</button>
+                        </div>
                     </div>
                 </li>`
         }//end for
