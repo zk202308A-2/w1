@@ -9,5 +9,37 @@
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
+
+    <script>
+
+      const menu = {
+        mno: 12,
+        name: '김밥',
+        price: 3000,
+        img: 'kimbap.jpg'
+      }
+
+      //const name = menu.name
+      //const price = menu.price
+
+      //객체의 구조를 분해해서 새로운 변수에 할당 
+      const {name, price} = menu
+
+      // function display(menuObj) {
+      //   const name = menuObj.name
+      //   const price = memenuObjnu.price
+      // }
+
+      function display({name, price}) {
+      }
+
+
+
+      display(menu)
+
+
+
+
+    </script>
   </body>
 </html>
