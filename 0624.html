@@ -79,11 +79,15 @@
 
     const menuList = document.querySelector('.menuList');
 
+    const fragment = document.createDocumentFragment();
+
     menus.forEach(menu => {
-      const li = document.createElement('li');
-      li.textContent = `${menu.name} - ${menu.price.toLocaleString()}원`;
-      menuList.appendChild(li);
+        const li = document.createElement('li');
+        li.textContent = `${menu.name} - ${menu.price.toLocaleString()}원`;
+        fragment.appendChild(li);
     });
+
+    menuList.appendChild(fragment);
   </script>
 </body>
 </html>
