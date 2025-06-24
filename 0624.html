@@ -68,7 +68,9 @@
     </div>
   </div>
 
-  <script>
+  <script type="module">
+     import { addCart, removeCart } from '/src/cart.js';
+
     const menus = [
       { mno: 1, name: '짜장면', price: 8000 },
       { mno: 2, name: '짬뽕', price: 9000 },
@@ -84,6 +86,13 @@
     menus.forEach(menu => {
         const li = document.createElement('li');
         li.textContent = `${menu.name} - ${menu.price.toLocaleString()}원`;
+        li.addEventListener("click",(e)=>{ 
+            e.stopPropagation()
+            e.preventDefault()
+            alert(menu.name) 
+            console.log(e.target)
+            addCart(menu)
+        } , false)
         fragment.appendChild(li);
     });
 
