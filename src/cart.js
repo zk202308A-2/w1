@@ -21,6 +21,8 @@ export function addCart(menu) {
     }
     
     console.log(cart)
+    
+    return cart
 
 }
 export function removeCart(mno) {
