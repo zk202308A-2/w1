@@ -70,7 +70,7 @@
   </div>
 
   <script type="module">
-     import { addCart, removeCart } from '/src/cart.js';
+     import { addCart, changeCartQty } from '/src/cart.js';
 
     const menus = [
       { mno: 1, name: '짜장면', price: 8000 },
@@ -82,6 +82,20 @@
 
     const menuList = document.querySelector('.menuList');
     const cartItemList = document.querySelector('.cartItemList');
+
+    cartItemList.addEventListener("click", (e) => {
+        
+        const target = e.target
+        console.log(target)
+        const mno = target.getAttribute("data-mno")
+        const oper = target.getAttribute("data-oper")
+        console.log(mno, oper)
+        const result = changeCartQty(mno,oper)
+        displayCartItems(result)
+
+
+    }, false)
+
 
     const fragment = document.createDocumentFragment();
 
@@ -112,8 +126,8 @@
                         ${mno} -- ${name} - ${price} - ${qty} = ${qty*price}
                         </div>
                         <div>
-                            <button>+</button>
-                            <button>-</button>
+                            <button data-mno=${mno} data-oper='plus' >+</button>
+                            <button data-mno=${mno} data-oper='minus'>-</button>
                         </div>
                     </div>
                 </li>`

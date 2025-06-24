@@ -25,18 +25,27 @@ export function addCart(menu) {
     return cart
 
 }
-export function removeCart(mno) {
-    console.log("remove")
+export function changeCartQty(mno,oper) {
+    console.log("changeCartQty")
 
-    const targetMenu =cart.filter(obj => obj.mno === mno)
+    const targetMenu =cart.filter(obj => obj.mno === Number(mno))[0]
 
-    if(targetMenu){
+    console.log("------------eerserwer------------------")
+    console.log(targetMenu)
+
+    if(oper === 'plus'){
+        targetMenu.qty += 1
+    }else if(oper === 'minus'){
 
         if(targetMenu.qty === 1){
-            cart = filter(obj => obj.mno !== mno)
+            
+            cart = cart.filter(obj => obj.mno !== Number(mno))
+
+        }else {
+
+            targetMenu.qty -= 1
         }
 
     }
-
-
+    return cart
 }
